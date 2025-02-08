@@ -35,7 +35,7 @@ def startup_costs_calculator():
     print("Enter estimated costs for each category:")
     for category in categories:
         while True:
-            cost = input(f"How much was your {category.lower()} for {months} months? $")
+            cost = input(f"How much will your {category.lower()} cost for {months} months? $")
             if cost.replace('.', '').isdigit():  # Check if input is a valid number before and after the decimal
                 categories[category] = float(cost)
                 break
