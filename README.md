@@ -5,4 +5,3 @@ Please run the following command in cmd by typing cmd in the downloaded director
 Python must be installed to use the toolkit as well, you can find it at https://www.python.org/downloads/
 
 pip install -r requirements.txt
-
