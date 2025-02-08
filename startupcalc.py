@@ -4,7 +4,7 @@ from openpyxl.utils import get_column_letter
 def startup_costs_calculator():
     # List of business expense categories
     categories = {
-        "Equipment (Vehicle Cost, Cooking Utensils, etc) ": 0,
+        "Equipment (Vehicle Cost, Cooking Utensils, etc)": 0,
         "Food Supplies (How much are ingredients?)": 0,
         "Utilities": 0,
         "Licenses and Permits": 0,
