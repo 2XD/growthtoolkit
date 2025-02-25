@@ -46,7 +46,6 @@ total_units = sum(frequency)
 rev_per = total_revenue_units / total_units if total_units > 0 else 0
 vc_per = variable_costs / total_units if total_units > 0 else 0
 contribution_margin = rev_per - vc_per
-
 if total_units == 0:
     print("Error: No units sold. Cannot calculate break-even point.")
 else:
@@ -54,9 +53,10 @@ else:
         print("Variable costs cannot be equal to revenue per unit. Please run the calculator again.")
     else:
         besp = fixed_costs / contribution_margin
-        print(f"Your break-even sales point is {besp:.2f} units.")
-        print(f"Contribution Margin per Unit: ${contribution_margin:.2f}")
-
+        units_needed = (fixed_costs+variable_costs) / rev_per if rev_per > 0 else 0
+        print(f"Your break-even sales point is {besp:.2f} unit spread across all products based on their relative sales proportions. ")
+        print(f"Contribution Margin per Unit: ${contribution_margin:.2f}.")
+        print(f"The number of units you need to sell to cover both variable and fixed costs on average is {units_needed:.2f}. This is using the sales frequency you provided. ")
         # Save data to CSV
         file_name = input("What do you want to save the file as? ").strip()
         if not file_name:
