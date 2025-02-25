@@ -40,7 +40,7 @@ while temp < numproducts:
     products.append(get_valid_float(f"What is the selling price of {name} ($)? "))
     frequency.append(get_valid_float(f"How many units of {name} do you sell in a month? "))
 
-# Calculate the weighted average revenue per unit
+# Calculate the average cost per unit weighted to the amount that is sold
 total_revenue_units = sum(products[i] * frequency[i] for i in range(numproducts))
 total_units = sum(frequency)
 rev_per = total_revenue_units / total_units if total_units > 0 else 0
@@ -71,7 +71,9 @@ else:
             for name, price, qty in zip(product_names, products, frequency):
                 writer.writerow([name, price, qty])
             
-            writer.writerow([])  # Blank row for separation
+            writer.writerow([])
+            writer.writerow([])
+            writer.writerow([])
             writer.writerow(["Revenue", revenue])
             writer.writerow(["Revenue Per Unit", rev_per])
             writer.writerow(["Fixed Costs", fixed_costs])
@@ -79,6 +81,7 @@ else:
             writer.writerow(["Variable Costs Per Unit", vc_per])
             writer.writerow(["Break-Even Sales Point", besp])
             writer.writerow(["Contribution Margin", contribution_margin])
+            writer.writerow(["Unit Sales to Cover both Variable and Fixed Costs", units_needed])
 
         print("\nData saved successfully to " + csv_filename + "!")
         print("This tool calculated your break-even sales point and contribution margin as well as storing the other financial information that you entered.")
