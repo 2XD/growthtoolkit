@@ -21,8 +21,8 @@ def get_valid_float(prompt):
 # Get variables to calculate Break-Even Sales Point (BESP)
 print("This break-point calculator will determine the number of units that must be sold to cover both fixed and variable costs.")
 revenue = get_valid_float("What is your total revenue from sales ($)? ")
-fixed_costs = get_valid_float("What are your total fixed costs? This includes rent, utilities, and insurance. ($) ")
-variable_costs = get_valid_float("What are your total variable costs? This includes Advertising, card swipe fees, and fuel. ($) ")
+fixed_costs = get_valid_float("What are your total fixed costs? This includes rent, utilities, etc. ($) ")
+variable_costs = get_valid_float("What are your total variable costs? This includes inventory, card swipe fees, etc. ($) ")
 
 print("\nNow we are going to calculate the number of units you need to sell to cover your costs.\nFirst we need to determine the selling price per unit and frequency of sales for each product.") 
 numproducts = get_valid_float("How many different products do you sell? ")
