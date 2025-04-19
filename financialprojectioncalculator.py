@@ -1,6 +1,5 @@
-
 #This calculator uses expenses and revenues to determine the growth rate and give a financial projection
-#It calculates the growth rate seperately from month to month and adds them all up
+#It calculates the growth rate separately from month to month and adds them all up
 #Then the calculator divides by the number of months to get the most accurate result possible
 
 import csv
@@ -69,7 +68,7 @@ if newgr != "":
     except ValueError:  # More specific exception
         print("The input wasn't a number, so we're sticking with " + str(round(avg_growth_rate, 2)) + "%.")
 
-#do the calculations that will be saved to the csv later
+# Do the calculations that will be saved to the csv later
 check = 0
 while check == 0:
     futuremonths = input("\nHow many months ahead do you want to project your revenue? ")
@@ -84,6 +83,18 @@ projrev = rev * (1 + avg_growth_rate / 100) ** futuremonths
 projexp = expenses * (1 + avg_growth_rate / 100) ** futuremonths
 projprofit = projrev - projexp
 
+# Cumulative projections over time
+cumulative_rev = 0
+cumulative_exp = 0
+
+for i in range(1, futuremonths + 1):
+    month_rev = rev * (1 + avg_growth_rate / 100) ** i
+    month_exp = expenses * (1 + avg_growth_rate / 100) ** i
+    cumulative_rev += month_rev
+    cumulative_exp += month_exp
+
+cumulative_profit = cumulative_rev - cumulative_exp
+
 # Save as a CSV
 file_name = input("What do you want to save the file as?: ")
 if file_name == "":
@@ -97,6 +108,8 @@ with open(csv_filename, "w", newline="") as file:
     headers = ["Revenue", "Expenses", "Profit", "Months Ago", "Growth Rate", "Projected Revenue", "Projected Expenses", "Projected Profit"]
     writer.writerow(headers)
     writer.writerow([rev, expenses, profit, months_ago, avg_growth_rate, projrev, projexp, projprofit])
+    writer.writerow([])  # Blank row for separation
+    writer.writerow(["Cumulative over " + str(futuremonths) + " months", "", "", "", "", cumulative_rev, cumulative_exp, cumulative_profit])
 
 print("\nData saved successfully to " + csv_filename + "!")
 print("The csv file will contain the revenue, expenses, profit, and months ago that you entered,\nThe growth rate and the projected revenue, expenses, and profit were calculated by the Financial Calculator.")
