@@ -1,10 +1,32 @@
-Python must be installed to use the toolkit, you can find it at https://www.python.org/downloads/
+# Break-Even & Financial Projection Toolkit
 
-Please run the command prompt by typing cmd in the downloaded directory, or route to it using cd (file directory path) in order to use the provided excel tool kit.
+This Python-based toolkit helps small businesses and entrepreneurs make data-driven decisions through two key tools:
 
-![howtoinstall](https://i.ibb.co/My1Pth2S/cmd.png)
+1. **Break-Even Sales Point (BESP) Calculator** – Determine how many units you must sell to cover your fixed and variable costs.
+2. **Financial Projections Calculator** – Project future revenue, expenses, and profit using historical data and calculated or custom growth rates.
 
-Next run the requirements file using the following code so the tool will be able to be ran. 
-pip install -r requirements.txt
+---
 
+## Requirements
 
+- Python 3.x must be installed  
+  Download it from the official site: [https://www.python.org/downloads/](https://www.python.org/downloads/)
+
+---
+
+## Setup Instructions
+
+1. **Open a Command Prompt Window**  
+   Navigate to the directory where you've downloaded this repository. You can do this by:
+   - Typing `cmd` in the file path bar of the folder  
+   - Or opening a command prompt and running:
+     ```bash
+     cd path\to\your\directory
+     ```
+
+   ![howtoinstall](https://i.ibb.co/My1Pth2S/cmd.png)
+
+2. **Install Required Packages**
+   Run the following command to install necessary dependencies:
+   ```bash
+   pip install -r requirements.txt
